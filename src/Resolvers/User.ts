@@ -1,18 +1,9 @@
-type User = {
-  id: string;
-  name: string;
-};
-
-const users: User[] = [];
+import CreateUser from "../Services/CreateUser";
 
 export default {
-  Query: {
-    users: () => users,
-  },
   Mutation: {
-    createUser(_: any, { id, name }: User) {
-      users.push({ id, name });
-      return users;
+    createUser(_: any, user: User) {
+      return CreateUser.execute(user);
     },
   },
 };
