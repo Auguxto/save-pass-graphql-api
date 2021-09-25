@@ -1,0 +1,113 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id          String       @id @default(uuid())
+  email       String       @unique
+  password    String
+  infos       Info?
+  address     Address?
+  notes       Note[]
+  folders     Folder[]
+  credentials Credential[]
+  cards       Card[]
+  created_at  DateTime     @default(now())
+  updated_at  DateTime     @updatedAt
+}
+
+model Info {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  name       String
+  gender     String
+  age        String
+  telephone  String
+  birthday   DateTime
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Address {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  country    String
+  state      String
+  city       String
+  road       String
+  district   String
+  number     String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Note {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  name       String
+  note       String
+  folder     Folder   @relation(fields: [folderId], references: [id])
+  folderId   String
+  favorite   Boolean  @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Credential {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  name       String
+  username   String
+  email      String
+  telephone  String
+  password   String
+  note       String
+  folder     Folder   @relation(fields: [folderId], references: [id])
+  folderId   String
+  favorite   Boolean  @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Card {
+  id            String   @id @default(uuid())
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  name          String
+  number        String
+  password      String
+  flag          String
+  bank          String
+  security_code String
+  note          String
+  folder        Folder   @relation(fields: [folderId], references: [id])
+  folderId      String
+  favorite      Boolean  @default(false)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+}
+
+model Folder {
+  id          String       @id @default(uuid())
+  user        User         @relation(fields: [userId], references: [id])
+  userId      String
+  name        String
+  notes       Note[]
+  credentials Credential[]
+  cards       Card[]
+  favorite    Boolean      @default(false)
+  created_at  DateTime     @default(now())
+  updated_at  DateTime     @updatedAt
+}
