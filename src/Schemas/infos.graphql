@@ -1,0 +1,26 @@
+type Infos {
+  id: ID
+  userId: String!
+  name: String!
+  gender: String!
+  age: String!
+  telephone: String!
+  birthday: DateTime!
+  created_at: DateTime
+  updated_at: DateTime
+}
+
+type Query {
+  info(id: ID!): Infos
+}
+
+type Mutation {
+  createInfo(
+    userId: String!
+    name: String!
+    gender: String!
+    age: String!
+    telephone: String!
+    birthday: DateTime!
+  ): Infos
+}

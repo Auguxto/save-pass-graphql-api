@@ -1,0 +1,28 @@
+type Address {
+  id: ID
+  userId: ID!
+  country: String!
+  state: String!
+  city: String!
+  district: String!
+  road: String!
+  number: String!
+  created_at: DateTime
+  updated_at: DateTime
+}
+
+type Query {
+  address(id: ID!): Address
+}
+
+type Mutation {
+  createAddress(
+    userId: ID!
+    country: String!
+    state: String!
+    city: String!
+    district: String!
+    road: String!
+    number: String!
+  ): Address
+}

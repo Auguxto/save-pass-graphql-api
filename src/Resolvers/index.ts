@@ -1,12 +1,14 @@
-import Book from "./Book";
+import Address from "./Address";
+import Infos from "./Infos";
 import User from "./User";
 
 export default {
   Query: {
-    books: Book.Query.books,
+    user: User.Query.user,
   },
   Mutation: {
-    createBook: Book.Mutation.createBook,
     createUser: User.Mutation.createUser,
+    createAddress: Address.Mutation.createAddress,
+    createInfo: Infos.Mutation.createAddress,
   },
 };

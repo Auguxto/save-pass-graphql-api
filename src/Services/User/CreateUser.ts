@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import validator from "validator";
 
-import AppError from "../Error/AppError";
+import AppError from "../../Error/AppError";
 
 const prisma = new PrismaClient();
 

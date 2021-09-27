@@ -1,6 +1,21 @@
+scalar DateTime
+
 type User {
+  id: ID
   email: String!
   password: String!
+  infos: Infos
+  address: Address
+  notes: String
+  folders: String
+  credentials: String
+  cards: String
+  created_at: String
+  updated_at: String
+}
+
+type Query {
+  user(email: ID!): User
 }
 
 type Mutation {
