@@ -9,9 +9,8 @@ export default {
       const user = await prisma.user.findFirst({
         where: { email },
         include: {
-          address: {
-            include: { user: true },
-          },
+          address: true,
+          infos: true,
         },
       });
       return user;

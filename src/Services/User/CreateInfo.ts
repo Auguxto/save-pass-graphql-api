@@ -18,11 +18,16 @@ class CreateInfo {
     if (!user) throw new AppError("User not exists");
 
     if (user.infos) {
-      await prisma.info.delete({
+      const info_updated = await prisma.info.update({
         where: {
           id: user.infos.id,
         },
+        data: {
+          ...info,
+        },
       });
+
+      return info_updated;
     }
 
     const info_new = await prisma.info.create({
