@@ -4,7 +4,6 @@ type User = {
 };
 
 type Address = {
-  userId: string;
   country: string;
   state: string;
   city: string;
@@ -14,10 +13,13 @@ type Address = {
 };
 
 type Infos = {
-  userId: string;
   name: string;
   gender: string;
   age: string;
   telephone: string;
   birthday: Date;
+};
+
+type MutationContext = {
+  authHeader: string;
 };

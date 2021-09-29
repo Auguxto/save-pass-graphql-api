@@ -1,14 +1,17 @@
 import { PrismaClient } from "@prisma/client";
 
 import AppError from "../../Error/AppError";
+import AuthenticationAssurance from "../../Middlewares/AuthenticationAssurance";
 
 const prisma = new PrismaClient();
 
 class CreateInfo {
-  async execute(info: Infos) {
+  async execute(info: Infos, context: MutationContext) {
+    const userId = await AuthenticationAssurance(context.authHeader);
+    if (!userId) throw new AppError("Unauthorized");
     const user = await prisma.user.findUnique({
       where: {
-        id: info.userId,
+        id: userId,
       },
       include: {
         infos: true,
@@ -33,6 +36,7 @@ class CreateInfo {
     const info_new = await prisma.info.create({
       data: {
         ...info,
+        userId,
       },
     });
 

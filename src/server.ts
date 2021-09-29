@@ -8,6 +8,9 @@ import resolvers from "./Resolvers";
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: ({ req }) => ({
+    authHeader: req.headers.authorization,
+  }),
 });
 
 server.listen().then(({ url }) => {
