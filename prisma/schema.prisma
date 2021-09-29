@@ -57,8 +57,8 @@ model Note {
   userId     String
   name       String
   note       String
-  folder     Folder   @relation(fields: [folderId], references: [id])
-  folderId   String
+  folder     Folder?   @relation(fields: [folderId], references: [id])
+  folderId   String?
   favorite   Boolean  @default(false)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -73,9 +73,9 @@ model Credential {
   email      String
   telephone  String
   password   String
-  note       String
-  folder     Folder   @relation(fields: [folderId], references: [id])
-  folderId   String
+  note       String?
+  folder     Folder?  @relation(fields: [folderId], references: [id])
+  folderId   String?
   favorite   Boolean  @default(false)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -91,9 +91,9 @@ model Card {
   flag          String
   bank          String
   security_code String
-  note          String
-  folder        Folder   @relation(fields: [folderId], references: [id])
-  folderId      String
+  note          String?
+  folder        Folder?   @relation(fields: [folderId], references: [id])
+  folderId      String?
   favorite      Boolean  @default(false)
   created_at    DateTime @default(now())
   updated_at    DateTime @updatedAt

@@ -1,0 +1,30 @@
+type Card {
+  id: ID!
+  name: String!
+  number: String!
+  password: String!
+  flag: String!
+  bank: String!
+  security_code: String!
+  note: String!
+  favorite: Boolean!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Query {
+  card(id: ID!): Card
+}
+
+type Mutation {
+  createCard(
+    name: String!
+    number: String!
+    password: String!
+    flag: String!
+    bank: String!
+    security_code: String!
+    note: String
+    favorite: Boolean
+  ): Card
+}

@@ -1,13 +1,13 @@
 type Address {
-  id: ID
+  id: ID!
   country: String!
   state: String!
   city: String!
   district: String!
   road: String!
   number: String!
-  created_at: DateTime
-  updated_at: DateTime
+  created_at: DateTime!
+  updated_at: DateTime!
 }
 
 type Query {
