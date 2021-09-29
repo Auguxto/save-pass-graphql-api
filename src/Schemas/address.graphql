@@ -1,5 +1,7 @@
 type Address {
   id: ID!
+  user: User!
+  userId: ID!
   country: String!
   state: String!
   city: String!

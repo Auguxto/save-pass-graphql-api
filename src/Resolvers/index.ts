@@ -1,5 +1,6 @@
 import Address from "./Address";
 import Card from "./Card";
+import Credential from "./Credential";
 import Infos from "./Infos";
 import User from "./User";
 
@@ -13,5 +14,6 @@ export default {
     createAddress: Address.Mutation.createAddress,
     createInfo: Infos.Mutation.createAddress,
     createCard: Card.Mutation.createCard,
+    createCredential: Credential.Mutation.createCredential,
   },
 };

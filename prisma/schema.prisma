@@ -69,9 +69,9 @@ model Credential {
   user       User     @relation(fields: [userId], references: [id])
   userId     String
   name       String
-  username   String
-  email      String
-  telephone  String
+  username   String?
+  email      String?
+  telephone  String?
   password   String
   note       String?
   folder     Folder?  @relation(fields: [folderId], references: [id])

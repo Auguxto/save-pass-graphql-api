@@ -1,17 +1,17 @@
 scalar DateTime
 
 type User {
-  id: ID
+  id: ID!
   email: String!
   password: String!
   infos: Infos
   address: Address
   notes: String
   folders: String
-  credentials: String
-  cards: String
-  created_at: String
-  updated_at: String
+  credentials: [Credential!]
+  cards: [Card!]
+  created_at: DateTime!
+  updated_at: DateTime!
 }
 
 type Query {

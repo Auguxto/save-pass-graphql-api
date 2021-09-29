@@ -31,7 +31,7 @@ type Card = {
   favorite?: boolean;
 };
 
-type Credential = {
+type CCredential = {
   name: string;
   username?: string;
   email?: string;

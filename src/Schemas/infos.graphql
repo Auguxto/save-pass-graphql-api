@@ -1,5 +1,7 @@
 type Infos {
-  id: ID
+  id: ID!
+  user: User!
+  userId: ID!
   name: String!
   gender: String!
   age: String!
