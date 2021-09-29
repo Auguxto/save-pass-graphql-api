@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import validator from "validator";
 
 import AppError from "../../Error/AppError";
+import { encrypt } from "../../Lib/Crypt";
 
 const prisma = new PrismaClient();
 
@@ -32,7 +33,18 @@ class CreateUser {
       },
     });
 
-    return user_new;
+    const password_hash = encrypt(password, user_new.id);
+
+    const user_hashed = await prisma.user.update({
+      where: {
+        email,
+      },
+      data: {
+        password: password_hash,
+      },
+    });
+
+    return user_hashed;
   }
 }
 

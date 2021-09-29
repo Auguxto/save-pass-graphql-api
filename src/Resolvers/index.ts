@@ -8,6 +8,7 @@ export default {
   },
   Mutation: {
     createUser: User.Mutation.createUser,
+    createSession: User.Mutation.createSession,
     createAddress: Address.Mutation.createAddress,
     createInfo: Infos.Mutation.createAddress,
   },

@@ -1,5 +1,7 @@
-import CreateUser from "../Services/User/CreateUser";
 import { PrismaClient } from "@prisma/client";
+
+import CreateUser from "../Services/User/CreateUser";
+import CreateSession from "../Services/User/CreateSession";
 
 const prisma = new PrismaClient();
 
@@ -19,6 +21,9 @@ export default {
   Mutation: {
     async createUser(_: any, user: User) {
       return CreateUser.execute(user);
+    },
+    async createSession(_: any, user: User) {
+      return CreateSession.execute(user);
     },
   },
 };
