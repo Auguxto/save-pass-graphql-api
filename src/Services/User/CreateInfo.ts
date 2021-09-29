@@ -18,8 +18,6 @@ class CreateInfo {
       },
     });
 
-    if (!user) throw new AppError("User not exists");
-
     if (user.infos) {
       const info_updated = await prisma.info.update({
         where: {

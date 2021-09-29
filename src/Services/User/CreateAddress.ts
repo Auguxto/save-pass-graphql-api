@@ -18,8 +18,6 @@ class CreateAddress {
       },
     });
 
-    if (!user) throw new AppError("User not exists");
-
     if (user.address) {
       const address_updated = await prisma.address.update({
         where: {
