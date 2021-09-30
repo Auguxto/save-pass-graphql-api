@@ -7,8 +7,8 @@ type Infos {
   age: String!
   telephone: String!
   birthday: DateTime!
-  created_at: DateTime
-  updated_at: DateTime
+  created_at: DateTime!
+  updated_at: DateTime!
 }
 
 type Query {

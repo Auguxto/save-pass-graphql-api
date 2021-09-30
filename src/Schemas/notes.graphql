@@ -1,0 +1,25 @@
+type Note {
+  id: ID!
+  user: User!
+  userId: ID!
+  name: String!
+  note: String!
+  folder: String
+  folderId: ID
+  favorite: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Query {
+  note(id: ID!): Note
+}
+
+type Mutation {
+  createNote(
+    name: String!
+    note: String!
+    folderId: String
+    favorite: Boolean
+  ): Note
+}

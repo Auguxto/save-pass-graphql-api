@@ -41,6 +41,13 @@ type CCredential = {
   favorite?: boolean;
 };
 
+type Note = {
+  name: string;
+  note: string;
+  folderId?: string;
+  favorite?: boolean;
+};
+
 type MutationContext = {
   authHeader: string;
 };

@@ -6,8 +6,8 @@ type User {
   password: String!
   infos: Infos
   address: Address
-  notes: String
   folders: String
+  notes: [Note!]!
   credentials: [Credential!]
   cards: [Card!]
   created_at: DateTime!

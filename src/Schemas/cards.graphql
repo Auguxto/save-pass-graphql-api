@@ -8,9 +8,9 @@ type Card {
   flag: String!
   bank: String!
   security_code: String!
-  note: String!
-  folder: String!
-  folderId: ID!
+  note: String
+  folder: String
+  folderId: ID
   favorite: Boolean!
   created_at: DateTime!
   updated_at: DateTime!

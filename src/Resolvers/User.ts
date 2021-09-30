@@ -13,6 +13,9 @@ export default {
         include: {
           address: true,
           infos: true,
+          cards: true,
+          credentials: true,
+          notes: true,
         },
       });
       return user;
