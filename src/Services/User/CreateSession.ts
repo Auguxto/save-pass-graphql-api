@@ -27,7 +27,7 @@ class CreateSession {
 
     delete user.password;
 
-    return token;
+    return { token };
   }
 }
 

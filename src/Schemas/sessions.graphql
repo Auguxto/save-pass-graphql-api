@@ -1,3 +1,7 @@
+type Session {
+  token: String!
+}
+
 type Mutation {
-  createSession(email: String!, password: String!): String
+  createSession(email: String!, password: String!): Session
 }

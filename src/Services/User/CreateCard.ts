@@ -11,6 +11,7 @@ class CreateCard {
     const userId = await AuthenticationAssurance(context.authHeader);
     if (!userId) throw new AppError("Unauthorized");
 
+    const number_hash = encrypt(card.number, userId);
     const password_hash = encrypt(card.password, userId);
     const security_code_hash = encrypt(card.security_code, userId);
 
@@ -18,6 +19,7 @@ class CreateCard {
       data: {
         ...card,
         userId,
+        number: number_hash,
         password: password_hash,
         security_code: security_code_hash,
       },
