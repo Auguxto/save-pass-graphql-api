@@ -1,0 +1,20 @@
+type Folder {
+  id: ID!
+  user: User!
+  userID: ID!
+  name: String!
+  notes: [Note!]!
+  credentials: [Credential!]!
+  cards: [Card!]!
+  favorite: Boolean
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+type Query {
+  folder(id: ID!): Folder
+}
+
+type Mutation {
+  createFolder(name: String!, favorite: Boolean): Folder
+}

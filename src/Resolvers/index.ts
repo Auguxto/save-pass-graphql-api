@@ -1,6 +1,7 @@
 import Address from "./Address";
 import Card from "./Card";
 import Credential from "./Credential";
+import Folder from "./Folder";
 import Infos from "./Infos";
 import Note from "./Note";
 import User from "./User";
@@ -17,5 +18,6 @@ export default {
     createCard: Card.Mutation.createCard,
     createCredential: Credential.Mutation.createCredential,
     createNote: Note.Mutation.createNote,
+    createFolder: Folder.Mutation.createFolder,
   },
 };

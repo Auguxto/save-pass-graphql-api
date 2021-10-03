@@ -11,6 +11,15 @@ class CreateCard {
     const userId = await AuthenticationAssurance(context.authHeader);
     if (!userId) throw new AppError("Unauthorized");
 
+    if (card.folderId) {
+      const folder_exists = await prisma.folder.findFirst({
+        where: { id: card.folderId },
+      });
+      if (!folder_exists || folder_exists.userId !== userId) {
+        throw new AppError("Unauthorized");
+      }
+    }
+
     const number_hash = encrypt(card.number, userId);
     const password_hash = encrypt(card.password, userId);
     const security_code_hash = encrypt(card.security_code, userId);
@@ -22,6 +31,10 @@ class CreateCard {
         number: number_hash,
         password: password_hash,
         security_code: security_code_hash,
+      },
+      include: {
+        folder: true,
+        user: true,
       },
     });
 

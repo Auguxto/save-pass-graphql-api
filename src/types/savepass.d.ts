@@ -29,6 +29,7 @@ type Card = {
   security_code: string;
   note?: string | null;
   favorite?: boolean;
+  folderId: string;
 };
 
 type CCredential = {
@@ -39,12 +40,19 @@ type CCredential = {
   password: string;
   note?: string | null;
   favorite?: boolean;
+  folderId: string;
 };
 
 type Note = {
   name: string;
   note: string;
   folderId?: string;
+  favorite?: boolean;
+  folderId: string;
+};
+
+type Folder = {
+  name: string;
   favorite?: boolean;
 };
 

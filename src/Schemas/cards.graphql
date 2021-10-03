@@ -9,7 +9,7 @@ type Card {
   bank: String!
   security_code: String!
   note: String
-  folder: String
+  folder: Folder
   folderId: ID
   favorite: Boolean!
   created_at: DateTime!
@@ -30,5 +30,6 @@ type Mutation {
     security_code: String!
     note: String
     favorite: Boolean
+    folderId: ID
   ): Card
 }

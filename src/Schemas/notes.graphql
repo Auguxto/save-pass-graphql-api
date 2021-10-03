@@ -4,7 +4,7 @@ type Note {
   userId: ID!
   name: String!
   note: String!
-  folder: String
+  folder: Folder
   folderId: ID
   favorite: String!
   created_at: DateTime!
@@ -21,5 +21,6 @@ type Mutation {
     note: String!
     folderId: String
     favorite: Boolean
+    folderId: ID
   ): Note
 }
