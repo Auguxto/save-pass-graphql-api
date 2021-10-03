@@ -1,4 +1,4 @@
-import CreateCredential from "../Services/User/CreateCredential";
+import CreateCredential from "../Services/Credential/CreateCredential";
 
 export default {
   Query: {},

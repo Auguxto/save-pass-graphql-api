@@ -1,4 +1,4 @@
-import CreateFolder from "../Services/User/CreateFolder";
+import CreateFolder from "../Services/Folder/CreateFolder";
 
 export default {
   Query: {},

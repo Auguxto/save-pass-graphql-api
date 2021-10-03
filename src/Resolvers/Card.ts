@@ -1,4 +1,4 @@
-import CreateCard from "../Services/User/CreateCard";
+import CreateCard from "../Services/Card/CreateCard";
 
 export default {
   Query: {},

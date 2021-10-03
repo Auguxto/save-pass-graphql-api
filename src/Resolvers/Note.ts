@@ -1,4 +1,4 @@
-import CreateNote from "../Services/User/CreateNote";
+import CreateNote from "../Services/Note/CreateNote";
 
 export default {
   Query: {},

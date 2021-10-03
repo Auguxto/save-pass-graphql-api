@@ -1,4 +1,4 @@
-import CreateInfo from "../Services/User/CreateInfo";
+import CreateInfo from "../Services/Info/CreateInfo";
 
 export default {
   Query: {},

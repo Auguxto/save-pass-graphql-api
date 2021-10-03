@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 import CreateUser from "../Services/User/CreateUser";
-import CreateSession from "../Services/User/CreateSession";
+import CreateSession from "../Services/Session/CreateSession";
 
 const prisma = new PrismaClient();
 

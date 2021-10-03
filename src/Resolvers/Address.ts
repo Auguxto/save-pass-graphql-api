@@ -1,4 +1,4 @@
-import CreateAddress from "../Services/User/CreateAddress";
+import CreateAddress from "../Services/Address/CreateAddress";
 
 export default {
   Query: {},
