@@ -9,6 +9,7 @@ import User from "./User";
 export default {
   Query: {
     user: User.Query.user,
+    card: Card.Query.card,
   },
   Mutation: {
     createUser: User.Mutation.createUser,

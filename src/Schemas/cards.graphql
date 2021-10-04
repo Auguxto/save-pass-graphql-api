@@ -18,6 +18,7 @@ type Card {
 
 type Query {
   card(id: ID!): Card
+  cards(id: ID!): [Card!]!
 }
 
 type Mutation {

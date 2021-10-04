@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { verify } from "jsonwebtoken";
-import AppError from "../Error/AppError";
 
 interface TokenPayload {
   iat: number;

@@ -81,6 +81,7 @@ model Credential {
   updated_at DateTime @updatedAt
 }
 
+// Adicionar data de expiração do cartão!!!!!!!!!!!!!!
 model Card {
   id            String   @id @default(uuid())
   user          User     @relation(fields: [userId], references: [id])
