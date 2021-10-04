@@ -4,7 +4,10 @@ import GetCard from "../Services/Card/GetCard";
 export default {
   Query: {
     async card(_: any, { id }: { id: string }, context: MutationContext) {
-      return GetCard.execute(id, context);
+      return GetCard.findOne(id, context);
+    },
+    async cards(_: any, {}, context: MutationContext) {
+      return GetCard.findMany(context);
     },
   },
   Mutation: {

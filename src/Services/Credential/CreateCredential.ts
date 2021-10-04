@@ -16,7 +16,7 @@ class CreateCredential {
         where: { id: credential.folderId },
       });
       if (!folder_exists || folder_exists.userId !== userId) {
-        throw new AppError("Unauthorized");
+        throw new AppError("Invalid folder");
       }
     }
 

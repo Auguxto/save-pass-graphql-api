@@ -10,6 +10,7 @@ export default {
   Query: {
     user: User.Query.user,
     card: Card.Query.card,
+    cards: Card.Query.cards,
   },
   Mutation: {
     createUser: User.Mutation.createUser,

@@ -16,7 +16,7 @@ class CreateCard {
         where: { id: card.folderId },
       });
       if (!folder_exists || folder_exists.userId !== userId) {
-        throw new AppError("Unauthorized");
+        throw new AppError("Invalid folder");
       }
     }
 
