@@ -6,7 +6,7 @@ export default {
     async card(_: any, { id }: { id: string }, context: MutationContext) {
       return GetCard.findOne(id, context);
     },
-    async cards(_: any, {}, context: MutationContext) {
+    async cards(_: any, args, context: MutationContext) {
       return GetCard.findMany(context);
     },
   },

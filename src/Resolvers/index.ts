@@ -11,6 +11,8 @@ export default {
     user: User.Query.user,
     card: Card.Query.card,
     cards: Card.Query.cards,
+    credential: Credential.Query.credential,
+    credentials: Credential.Query.credentials,
   },
   Mutation: {
     createUser: User.Mutation.createUser,

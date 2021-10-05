@@ -49,9 +49,9 @@ class GetCard {
     });
 
     const cards_decrypted = cards.map((card) => {
-      const number = decrypt(card.number, card.userId);
-      const password = decrypt(card.password, card.userId);
-      const security_code = decrypt(card.security_code, card.userId);
+      const number = decrypt(card.number, userId);
+      const password = decrypt(card.password, userId);
+      const security_code = decrypt(card.security_code, userId);
 
       card.number = number;
       card.password = password;
