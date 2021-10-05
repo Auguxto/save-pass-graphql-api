@@ -13,7 +13,7 @@ type Address {
 }
 
 type Query {
-  address(id: ID!): Address
+  address: Address
 }
 
 type Mutation {

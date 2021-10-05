@@ -12,7 +12,7 @@ type Infos {
 }
 
 type Query {
-  info(id: ID!): Infos
+  info: Infos
 }
 
 type Mutation {

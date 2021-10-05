@@ -13,6 +13,7 @@ type Folder {
 
 type Query {
   folder(id: ID!): Folder
+  folders: [Folder!]!
 }
 
 type Mutation {

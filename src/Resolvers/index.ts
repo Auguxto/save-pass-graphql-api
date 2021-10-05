@@ -15,6 +15,8 @@ export default {
     credentials: Credential.Query.credentials,
     note: Note.Query.note,
     notes: Note.Query.notes,
+    folder: Folder.Query.folder,
+    folders: Folder.Query.folders,
   },
   Mutation: {
     createUser: User.Mutation.createUser,
