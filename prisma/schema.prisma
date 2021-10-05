@@ -81,7 +81,6 @@ model Credential {
   updated_at DateTime @updatedAt
 }
 
-// Adicionar data de expiração do cartão!!!!!!!!!!!!!!
 model Card {
   id            String   @id @default(uuid())
   user          User     @relation(fields: [userId], references: [id])
@@ -92,6 +91,7 @@ model Card {
   flag          String
   bank          String
   security_code String
+  expiresIn     String
   note          String?
   folder        Folder?   @relation(fields: [folderId], references: [id])
   folderId      String?

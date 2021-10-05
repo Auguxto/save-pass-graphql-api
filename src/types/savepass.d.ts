@@ -27,6 +27,7 @@ type Card = {
   flag: string;
   bank: string;
   security_code: string;
+  expiresIn: string;
   note?: string | null;
   favorite?: boolean;
   folderId: string;

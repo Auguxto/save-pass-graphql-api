@@ -8,6 +8,7 @@ type Card {
   flag: String!
   bank: String!
   security_code: String!
+  expiresIn: String!
   note: String
   folder: Folder
   folderId: ID
@@ -29,6 +30,7 @@ type Mutation {
     flag: String!
     bank: String!
     security_code: String!
+    expiresIn: String!
     note: String
     favorite: Boolean
     folderId: ID
