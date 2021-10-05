@@ -6,12 +6,12 @@ import AuthenticationAssurance from "../../Middlewares/AuthenticationAssurance";
 
 const prisma = new PrismaClient();
 
-class GetCard {
+class GetNote {
   async findOne(id: string, context: MutationContext) {
     const userId = await AuthenticationAssurance(context.authHeader);
     if (!userId) throw new AppError("Unauthorized");
 
-    const card = await prisma.card.findUnique({
+    const note = await prisma.note.findUnique({
       where: {
         id,
       },
@@ -21,24 +21,20 @@ class GetCard {
       },
     });
 
-    if (card.user.id !== userId) throw new AppError("Unauthorized");
+    if (note.user.id !== userId) throw new AppError("Unauthorized");
 
-    const number = decrypt(card.number, userId);
-    const password = decrypt(card.password, userId);
-    const security_code = decrypt(card.security_code, userId);
+    const note_decrypted = decrypt(note.note, userId);
 
-    card.number = number;
-    card.password = password;
-    card.security_code = security_code;
+    note.note = note_decrypted;
 
-    return card;
+    return note;
   }
 
   async findMany(context: MutationContext) {
     const userId = await AuthenticationAssurance(context.authHeader);
     if (!userId) throw new AppError("Unauthorized");
 
-    const cards = await prisma.card.findMany({
+    const notes = await prisma.note.findMany({
       where: {
         userId,
       },
@@ -48,20 +44,16 @@ class GetCard {
       },
     });
 
-    const cards_decrypted = cards.map((card) => {
-      const number = decrypt(card.number, userId);
-      const password = decrypt(card.password, userId);
-      const security_code = decrypt(card.security_code, userId);
+    const notes_decrypted = notes.map((note) => {
+      const note_decrypted = decrypt(note.note, userId);
 
-      card.number = number;
-      card.password = password;
-      card.security_code = security_code;
+      note.note = note_decrypted;
 
-      return card;
+      return note;
     });
 
-    return cards_decrypted;
+    return notes_decrypted;
   }
 }
 
-export default new GetCard();
+export default new GetNote();

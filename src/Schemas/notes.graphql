@@ -13,6 +13,7 @@ type Note {
 
 type Query {
   note(id: ID!): Note
+  notes: [Note!]!
 }
 
 type Mutation {

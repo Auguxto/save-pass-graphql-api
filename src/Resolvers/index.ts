@@ -13,6 +13,8 @@ export default {
     cards: Card.Query.cards,
     credential: Credential.Query.credential,
     credentials: Credential.Query.credentials,
+    note: Note.Query.note,
+    notes: Note.Query.notes,
   },
   Mutation: {
     createUser: User.Mutation.createUser,
