@@ -9,6 +9,8 @@ import User from "./User";
 export default {
   Query: {
     user: User.Query.user,
+    address: Address.Query.address,
+    info: Infos.Query.Info,
     card: Card.Query.card,
     cards: Card.Query.cards,
     credential: Credential.Query.credential,
