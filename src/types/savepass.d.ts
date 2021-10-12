@@ -57,6 +57,11 @@ type Folder = {
   favorite?: boolean;
 };
 
+type Payment = {
+  amount: number;
+  currency: string;
+};
+
 type MutationContext = {
   authHeader: string;
 };

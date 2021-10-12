@@ -4,6 +4,7 @@ import Credential from "./Credential";
 import Folder from "./Folder";
 import Infos from "./Infos";
 import Note from "./Note";
+import Payment from "./Payment";
 import User from "./User";
 
 export default {
@@ -29,5 +30,6 @@ export default {
     createCredential: Credential.Mutation.createCredential,
     createNote: Note.Mutation.createNote,
     createFolder: Folder.Mutation.createFolder,
+    createPaymentIntent: Payment.Mutation.createPaymentIntent,
   },
 };
