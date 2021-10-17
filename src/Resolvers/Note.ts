@@ -1,6 +1,8 @@
 import CreateNote from "../Services/Note/CreateNote";
 import GetNote from "../Services/Note/GetNote";
 
+import { MutationContext, Note } from "../types/savepass";
+
 export default {
   Query: {
     async note(_: any, { id }: { id: string }, context: MutationContext) {

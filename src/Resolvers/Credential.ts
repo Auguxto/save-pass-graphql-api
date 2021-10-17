@@ -1,6 +1,8 @@
 import CreateCredential from "../Services/Credential/CreateCredential";
 import GetCredential from "../Services/Credential/GetCredential";
 
+import { CCredential, MutationContext } from "../types/savepass";
+
 export default {
   Query: {
     async credential(_: any, { id }: { id: string }, context: MutationContext) {

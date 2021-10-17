@@ -1,0 +1,7 @@
+type Logged {
+  token: String
+}
+
+type Query {
+  logged: Logged
+}

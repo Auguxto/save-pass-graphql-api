@@ -1,6 +1,8 @@
 import CreateCard from "../Services/Card/CreateCard";
 import GetCard from "../Services/Card/GetCard";
 
+import { Card, MutationContext } from "../types/savepass";
+
 export default {
   Query: {
     async card(_: any, { id }: { id: string }, context: MutationContext) {

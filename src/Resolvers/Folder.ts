@@ -1,6 +1,8 @@
 import CreateFolder from "../Services/Folder/CreateFolder";
 import GetFolder from "../Services/Folder/GetFolder";
 
+import { Folder, MutationContext } from "../types/savepass";
+
 export default {
   Query: {
     async folder(_: any, { id }: { id: string }, context: MutationContext) {

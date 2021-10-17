@@ -4,10 +4,12 @@ import { sign } from "jsonwebtoken";
 import AppError from "../../Error/AppError";
 import { decrypt } from "../../Lib/Crypt";
 
+import { MutationContext, User } from "../../types/savepass";
+
 const prisma = new PrismaClient();
 
 class CreateSession {
-  async execute({ email, password }: User) {
+  async execute({ email, password }: User, context: MutationContext) {
     const user = await prisma.user.findUnique({
       where: {
         email,
@@ -25,7 +27,12 @@ class CreateSession {
       expiresIn: "1d",
     });
 
-    delete user.password;
+    const options = {
+      maxAge: 1000 * 60 * 60 * 24,
+      httpOnly: true,
+    };
+
+    context.res.cookie("token", token, { ...options, sameSite: "strict" });
 
     return { token };
   }

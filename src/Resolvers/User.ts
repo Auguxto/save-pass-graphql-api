@@ -3,6 +3,8 @@ import { PrismaClient } from "@prisma/client";
 import CreateUser from "../Services/User/CreateUser";
 import CreateSession from "../Services/Session/CreateSession";
 
+import { MutationContext, User } from "../types/savepass";
+
 const prisma = new PrismaClient();
 
 export default {
@@ -25,8 +27,8 @@ export default {
     async createUser(_: any, user: User) {
       return CreateUser.execute(user);
     },
-    async createSession(_: any, user: User) {
-      return CreateSession.execute(user);
+    async createSession(_: any, user: User, context: MutationContext) {
+      return CreateSession.execute(user, context);
     },
   },
 };

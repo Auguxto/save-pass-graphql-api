@@ -1,3 +1,5 @@
+import { Request, Response } from "express";
+
 type User = {
   email: string;
   password: string;
@@ -64,4 +66,6 @@ type Payment = {
 
 type MutationContext = {
   authHeader: string;
+  req: Request;
+  res: Response;
 };

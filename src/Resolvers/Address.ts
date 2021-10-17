@@ -1,6 +1,8 @@
 import CreateAddress from "../Services/Address/CreateAddress";
 import GetAddress from "../Services/Address/GetAddress";
 
+import { Address, MutationContext } from "../types/savepass";
+
 export default {
   Query: {
     async address(_: any, args, context: MutationContext) {

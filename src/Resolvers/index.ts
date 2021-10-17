@@ -3,6 +3,7 @@ import Card from "./Card";
 import Credential from "./Credential";
 import Folder from "./Folder";
 import Infos from "./Infos";
+import Logged from "./Logged";
 import Note from "./Note";
 import Payment from "./Payment";
 import User from "./User";
@@ -14,6 +15,7 @@ export default {
     info: Infos.Query.Info,
     card: Card.Query.card,
     cards: Card.Query.cards,
+    logged: Logged.Query.logged,
     credential: Credential.Query.credential,
     credentials: Credential.Query.credentials,
     note: Note.Query.note,
